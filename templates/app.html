@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Churn Model</title>
+</head>
+<body>
+
+{% if message is defined %}
+    Error: {{ message }}
+{% endif %}
+
+<form action="/classifier" method="post">
+    <select name="classifier">
+        {% for classifier in classifiers | reverse %}
+            <option value="{{ classifier }}">{{ classifier }}</option>
+        {% endfor %}
+    </select>
+   <input type="submit" value="select">
+</form>
+</body>
+</html>

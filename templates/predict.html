@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Churn Model</title>
+</head>
+<body>
+<form action="/predict" method="post">
+MonthlyCharges: <input name="MonthlyCharges" value="0" type="number" min="0"> <br>
+    {% for label in labels %}
+        {% if label != 'Churn' %}
+            {{ label }} :
+            <select name="{{ label }}">
+                {% for item in labels[label] %}
+                    <option value="{{ item }}">{{ item }}</option>
+                {% endfor %}
+            </select>
+            <br>
+        {% endif %}
+    {% endfor %}
+    <input type="submit" value="select">
+</form>
+{% if message is defined %} {{ message }}
+{% else %}
+ Predict your client churn
+{% endif %}
+</body>
+</html>

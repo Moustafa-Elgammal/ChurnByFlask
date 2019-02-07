@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title>Churn Model</title>
+</head>
+<body>
+Selected Classifier: {% if selected_classifier is defined %} {{ selected_classifier }} {% else %} Error {% endif %} <br>
+
+Score: {% if score is defined %} {{ score }} {% else %} No score {% endif %} <br>
+
+Predicted Score: {% if predicted_score is defined %} {{ predicted_score }} {% else %} No score {% endif %} <br>
+
+Confusion Matrix: {% if confusion_matrix is defined %} {{confusion_matrix | safe}} {% else %} No Confusion Matrix {% endif %} <br>
+
+<a href="predict"> predict </a>
+</body>
+</html>
