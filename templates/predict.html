@@ -3,6 +3,8 @@
     <title>Churn Model</title>
 </head>
 <body>
+<a href="/">Change The Classifier</a>
+
 <form action="/predict" method="post">
 MonthlyCharges: <input name="MonthlyCharges" value="0" type="number" min="0"> <br>
     {% for label in labels %}
